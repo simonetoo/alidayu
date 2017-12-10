@@ -1,4 +1,11 @@
 
+[![Build Status](https://scrutinizer-ci.com/g/vicens/alidayu/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vicens/captcha/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vicens/alidayu/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vicens/captcha/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/vicens/alidayu/v/stable)](https://packagist.org/packages/vicens/captcha)
+[![Total Downloads](https://poser.pugx.org/vicens/alidayu/downloads)](https://packagist.org/packages/vicens/captcha)
+[![License](https://poser.pugx.org/vicens/alidayu/license)](https://packagist.org/packages/vicens/captcha)
+
+
 ## 阿里云通信(阿里大于)SDK
 阿里大于，是阿里通信旗下优质便捷的云通信服务平台，整合了三大运营商的通信能力，为开发者提供简洁易用的短信／语音API，三网合一通道，按需付费。阿里集团技术保障，实时、稳定、到达率高！
 
