@@ -53,7 +53,7 @@ class Response
 
         $this->content = $response->getBody()->getContents();
 
-        $this->data = json_decode($this->content, JSON_OBJECT_AS_ARRAY);
+        $this->data = json_decode($this->content, true);
 
         $this->success = isset($this->data['result']['success']) && $this->data['result']['success'] === true;
 
