@@ -53,7 +53,7 @@ abstract class AbstractRequest
     /**
      * 辅助函数: 获取或设置参数
      * @param $key
-     * @param null $value
+     * @param mixed|null $value
      * @return $this|mixed
      */
     protected function getOrSetParam($key, $value = null)
