@@ -1,9 +1,9 @@
 
-[![Build Status](https://scrutinizer-ci.com/g/vicens/alidayu/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vicens/captcha/build-status/master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vicens/alidayu/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vicens/captcha/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/vicens/alidayu/v/stable)](https://packagist.org/packages/vicens/captcha)
-[![Total Downloads](https://poser.pugx.org/vicens/alidayu/downloads)](https://packagist.org/packages/vicens/captcha)
-[![License](https://poser.pugx.org/vicens/alidayu/license)](https://packagist.org/packages/vicens/captcha)
+[![Build Status](https://scrutinizer-ci.com/g/vicens/alidayu/badges/build.png?b=master)](https://scrutinizer-ci.com/g/vicens/alidayu/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/vicens/alidayu/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/vicens/alidayu/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/vicens/alidayu/v/stable)](https://packagist.org/packages/vicens/alidayu)
+[![Total Downloads](https://poser.pugx.org/vicens/alidayu/downloads)](https://packagist.org/packages/vicens/alidayu)
+[![License](https://poser.pugx.org/vicens/alidayu/license)](https://packagist.org/packages/vicens/alidayu)
 
 
 ## 阿里云通信(阿里大于)SDK
