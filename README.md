@@ -16,7 +16,7 @@
 
 ### 环境要求
  - PHP >= 5.4
- - guzzlehttp/guzzle
+ - [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) ^5.0
  
  ### 安装
  
@@ -32,7 +32,11 @@ composer require vicens/alidayu
 use Vicens\Alidayu\Alidayu;
 Alidayu::setConfig([
    'appKey' => '23356838',
-   'appSecret' => '254fee5fbabe2e01be04581d855c9af3'
+   'appSecret' => '254fee5fbabe2e01be04581d855c9af3',
+   // 使用HTTPs
+   'secure' => false,
+   // 沙盒环境
+   'sandbox' => false
 ]);
 ```
 

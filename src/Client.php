@@ -90,6 +90,9 @@ class Client
         // 沙箱环境
         $this->sandbox = isset($config['sandbox']) ? (bool)$config['sandbox'] : false;
 
+        // 使用HTTPS
+        $this->secure = isset($config['secure']) ? (bool)$config['secure'] : false;
+
         return $this;
     }
 
