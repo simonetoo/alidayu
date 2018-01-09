@@ -16,7 +16,7 @@
 
 ### 环境要求
  - PHP >= 5.4
- - [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) ^5.0
+ - [guzzlehttp/guzzle](https://github.com/guzzle/guzzle) >=5.3
  
  ### 安装
  
