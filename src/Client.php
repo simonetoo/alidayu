@@ -120,7 +120,7 @@ class Client
         // 发起请求
         $response = $client->get($this->getUrl() . '?' . build_query($params));
 
-        return new Response($response);
+        return new Response($response, $request);
     }
 
     /**

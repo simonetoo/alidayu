@@ -3,6 +3,7 @@
 namespace Vicens\Alidayu;
 
 use \Psr\Http\Message\ResponseInterface;
+use Vicens\Alidayu\Request\AbstractRequest;
 
 class Response
 {
@@ -11,19 +12,30 @@ class Response
      * 原响应实例
      * @var ResponseInterface
      */
-    protected $response = null;
+    protected $response;
+
+    /**
+     * @var AbstractRequest
+     */
+    protected $request;
 
     /**
      * 响应内容
+     * @var array
+     */
+    protected $content;
+
+    /**
+     * 原始影响内容
      * @var string
      */
-    protected $content = null;
+    protected $original;
 
     /**
      * 响应的数据
-     * @var array
+     * @var array|string|bool|mixed
      */
-    protected $data = [];
+    protected $data;
 
     /**
      * 是否成功
@@ -35,36 +47,51 @@ class Response
      * 错误消息
      * @var string|null
      */
-    protected $error = null;
+    protected $error;
 
     /**
      * 错误代码
      * @var string|null
      */
-    protected $errorCode = null;
+    protected $errorCode;
 
     /**
      * Response constructor.
      * @param ResponseInterface $response
+     * @param AbstractRequest $request
      */
-    public function __construct(ResponseInterface $response)
+    public function __construct(ResponseInterface $response, AbstractRequest $request)
     {
         $this->response = $response;
 
-        $this->content = $response->getBody()->getContents();
+        $this->request = $request;
 
-        $this->data = json_decode($this->content, true);
+        $this->original = $response->getBody()->getContents();
 
-        $this->success = isset($this->data['result']['success']) && $this->data['result']['success'] === true;
+        $this->content = json_decode($this->original, true);
 
-        if ($this->fail()) {
-            if (isset($this->data['result'])) {
-                $this->error = $this->data['result']['msg'];
-                $this->errorCode = $this->data['result']['err_code'];
-            } else if (isset($this->data['error_response']['sub_msg'])) {
-                $this->error = $this->data['error_response']['sub_msg'];
-                $this->errorCode = $this->data['error_response']['sub_code'];
+        if (array_key_exists('error_response', $this->data)) {
+
+            $error = $this->data['error_response'];
+
+            if (array_key_exists('sub_code', $error)) {
+                $this->errorCode = $error['sub_code'];
+            } elseif (array_key_exists('code', $error)) {
+                $this->errorCode = $error['code'];
             }
+
+            if (array_key_exists('sub_msg', $error)) {
+                $this->error = $error['sub_msg'];
+            } elseif (array_key_exists('msg', $error)) {
+                $this->error = $error['msg'];
+            } else {
+                $this->error = 'UnKnown Error';
+            }
+
+        } else {
+
+            $this->success = true;
+            $this->data = $request->parseData($this->content);
         }
     }
 
@@ -105,6 +132,15 @@ class Response
     }
 
     /**
+     * 返回原始响应内容
+     * @return string
+     */
+    public function getOriginal()
+    {
+        return $this->original;
+    }
+
+    /**
      * 返回响应数据
      * @return array
      */
@@ -130,5 +166,14 @@ class Response
     {
 
         return $this->errorCode;
+    }
+
+    /**
+     * 返回请求实例
+     * @return AbstractRequest
+     */
+    public function getRequest()
+    {
+        return $this->request;
     }
 }

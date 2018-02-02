@@ -68,6 +68,17 @@ abstract class AbstractRequest
     }
 
     /**
+     * 解析数据
+     * @param array $response
+     * @return mixed
+     */
+    public function parseData(array $response)
+    {
+        $key = str_replace('.', '_', $this->getMethod()) . '_response';
+        return array_key_exists($key, $response) ? $response[$key] : null;
+    }
+
+    /**
      * 自动设置参数
      * @param $name
      * @param $arguments
