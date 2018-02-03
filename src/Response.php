@@ -124,7 +124,7 @@ class Response
 
     /**
      * 返回响应内容
-     * @return string
+     * @return array
      */
     public function getContent()
     {
@@ -142,7 +142,7 @@ class Response
 
     /**
      * 返回响应数据
-     * @return array
+     * @return array|string|bool|mixed
      */
     public function getData()
     {
