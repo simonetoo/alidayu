@@ -70,9 +70,9 @@ class Response
 
         $this->content = json_decode($this->original, true);
 
-        if (array_key_exists('error_response', $this->data)) {
+        if (array_key_exists('error_response', $this->content)) {
 
-            $error = $this->data['error_response'];
+            $error = $this->content['error_response'];
 
             if (array_key_exists('sub_code', $error)) {
                 $this->errorCode = $error['sub_code'];
